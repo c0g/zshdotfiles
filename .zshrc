@@ -1,3 +1,5 @@
+bindkey '^R' history-incremental-search-backward
+alias la="ls -larth"
 DIRSTACKSIZE=8
 ex() {
     if [[ -f $1 ]]; then
@@ -24,12 +26,6 @@ ex() {
 }
 setopt autopushd pushdminus pushdsilent pushdtohome
 alias dh='dirs -v'
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
 autoload -U colors && colors
 autoload -U promptinit
 promptinit
@@ -61,4 +57,10 @@ zstyle :compinstall filename '/Users/tom/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 source ~/.zshrc.local
