@@ -1,3 +1,4 @@
+alias la="ls -larth"
 DIRSTACKSIZE=8
 ex() {
     if [[ -f $1 ]]; then
