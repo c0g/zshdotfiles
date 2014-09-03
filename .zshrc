@@ -29,13 +29,13 @@ alias dh='dirs -v'
 autoload -U colors && colors
 autoload -U promptinit
 promptinit
-PROMPT="%{$fg[green]%} %n %{$fg[yellow]%} at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}% "
+PROMPT="%{$fg[green]%}%n %{$fg[yellow]%}at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}in %{$fg[green]%}%1~ %{$reset_color%}% "
 precmd() {
-    PROMPT="%{$fg[green]%}%n%{$fg[yellow]%} at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}% "
+    PROMPT="%{$fg[green]%}%n %{$fg[yellow]%}at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}in %{$fg[green]%}%1~ %{$reset_color%}% "
 }
 zle-keymap-select() {
-    PROMPT="%{$fg[green]%}%n%{$fg[yellow]%} at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}% "
-    [[ $KEYMAP = vicmd ]] && PROMPT="%{$fg[blue]%}%n %{$fg[yellow]at %{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}% "
+    PROMPT="%{$fg[green]%}%n %{$fg[yellow]%}at %{$fg[green]%}%m %{$fg_no_bold[yellow]%}in %{$fg[green]%}%1~ %{$reset_color%}% "
+    [[ $KEYMAP = vicmd ]] && PROMPT="%{$fg[blue]%}%n %{$fg[yellow]at %{$fg[blue]%}%m %{$fg_no_bold[yellow]%}in %{$fg[green]%}%1~ %{$reset_color%}% "
     () { return $__prompt_status }
     zle reset-prompt
 }
